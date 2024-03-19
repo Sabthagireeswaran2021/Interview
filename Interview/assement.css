@@ -1,0 +1,13 @@
+body{
+    background-size: cover;
+}
+#head{
+    color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+#colo{
+    color: black;
+    background: gold;
+}
