@@ -33,6 +33,7 @@
                     <nav class="nav">
                         <div class="container-inner  left">
                             <h1 id="head"><a>TIMES</a></h1>
+                        </div>
                     </nav>
                 </div>
                 <div class="col-md-4">
@@ -45,7 +46,8 @@
                 </div>
             </div>
         </section>
-        <hr><hr>
+        <hr>
+        <hr>
     </div>
     <br><br>
     <!-------------->
@@ -83,33 +85,56 @@
                 <!---News side----->
                 <div class="col-md-4">
                     <div id="colo">
-                        <h2>Latest stories</h2>
-                        <a href="https://www.nytimes.com/2024/03/19/world/asia/hong-kong-security-law-article-23.html" target="_blank">
-                            <h3>Hong Kong adopts sweeping security laws, Bowing to Beijing</h3>
-                        </a>
-                        <a href="https://www.nytimes.com/2024/03/18/business/media/russia-fake-journalists.html" target="_blank">
-                            <h3>From Russia Elaborate Tales of Fake Journalists</h3>
-                        </a>
-                        <a href="https://www.nytimes.com/2024/03/19/world/europe/israel-russia-us-ukraine.html" target="_blank">
-                            <h3>Israel Faces a tough balancing act when it comes to russia and the west</h3>
-                        </a>
-                        <a href="https://www.nytimes.com/2024/03/19/science/physics-massey-black.html" target="_blank">
-                            <h3>Walter massey, a Physicist With a Higher Calling</h3>
-                        </a>
-                        <a href="https://www.nytimes.com/2024/03/19/nyregion/trump-bond-ny-fraud-case.html" target="_blank">
-                            <h3>What we know about Trump's Failure to arrange a Half-billion-dollar Bond</h3>
-                        </a>
-                        <a href="https://www.nytimes.com/2024/03/19/us/politics/biden-election-donation.html" target="_blank">
-                            <h3>Outside groups pledge over $1 Billion to aid Biden's Re-election Effort</h3>
-                        </a>
-                        
+                        <!-- Latest stories will be dynamically added here -->
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
+    <script>
+        var latestStories = [
+            {
+                "title": "Hong Kong adopts sweeping security laws, Bowing to Beijing",
+                "url": "https://www.nytimes.com/2024/03/19/world/asia/hong-kong-security-law-article-23.html"
+            },
+            {
+                "title": "From Russia Elaborate Tales of Fake Journalists",
+                "url": "https://www.nytimes.com/2024/03/18/business/media/russia-fake-journalists.html"
+            },
+            {
+                "title": "Israel Faces a tough balancing act when it comes to russia and the west",
+                "url": "https://www.nytimes.com/2024/03/19/world/europe/israel-russia-us-ukraine.html"
+            },
+            {
+                "title": "Walter massey, a Physicist With a Higher Calling",
+                "url": "https://www.nytimes.com/2024/03/19/science/physics-massey-black.html"
+            },
+            {
+                "title": "What we know about Trump's Failure to arrange a Half-billion-dollar Bond",
+                "url": "https://www.nytimes.com/2024/03/19/nyregion/trump-bond-ny-fraud-case.html"
+            },
+            {
+                "title": "Outside groups pledge over $1 Billion to aid Biden's Re-election Effort",
+                "url": "https://www.nytimes.com/2024/03/19/us/politics/biden-election-donation.html"
+            }
+        ];
 
+        var colo = document.getElementById("colo");
+        var heading = document.createElement("h2");
+        heading.textContent = "Latest Stories";
+        colo.appendChild(heading);
+
+        latestStories.forEach(function (story) {
+            var link = document.createElement("a");
+            link.href = story.url;
+            link.target = "_blank";
+            var headline = document.createElement("h3");
+            headline.textContent = story.title;
+            link.appendChild(headline);
+            colo.appendChild(link);
+        });
+    </script>
 </body>
 
 </html>
