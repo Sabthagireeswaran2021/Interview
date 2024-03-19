@@ -1,44 +1,41 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // JSON data
-    var jsonData = [
-        {
-            "title": "Amy Schneider’s Jeopardy! Streak Ends at 40 Consecutive Wins and $1.4 Million",
-            "link": "https://time.com/6142934/amy-schneider-jeopardy-streak-ends/"
-        },
-        {
-            "title": "'Writing With Fire' Shines a Light on All-Women News Outlet",
-            "link": "https://time.com/6142628/writing-with-fire-india-documentary/"
-        },
-        {
-            "title": "Moderna Booster May Wane After 6 Months",
-            "link": "https://time.com/6142852/moderna-booster-wanes-omicron/"
-        },
-        {
-            "title": "Pressure Mounts for Biden to Nominate a Black Woman to the Supreme",
-            "link": "https://time.com/6142743/joe-biden-supreme-court-nominee-black-woman-campaignpromise/"
-        },
-        {
-            "title": "The James Webb Space Telescope Is in Position—And Now We Wait",
-            "link": "https://time.com/6142769/james-webb-space-telescope-reaches-l2/"
-        },
-        {
-            "title": "We Urgently Need a New National COVID-19 Response Plan",
-            "link": "https://time.com/6142718/we-need-new-national-covid-19-response-plan/"
-        }
-    ];
+var latestStories = [
+            {
+                "title": "Hong Kong adopts sweeping security laws, Bowing to Beijing",
+                "url": "https://www.nytimes.com/2024/03/19/world/asia/hong-kong-security-law-article-23.html"
+            },
+            {
+                "title": "From Russia Elaborate Tales of Fake Journalists",
+                "url": "https://www.nytimes.com/2024/03/18/business/media/russia-fake-journalists.html"
+            },
+            {
+                "title": "Israel Faces a tough balancing act when it comes to russia and the west",
+                "url": "https://www.nytimes.com/2024/03/19/world/europe/israel-russia-us-ukraine.html"
+            },
+            {
+                "title": "Walter massey, a Physicist With a Higher Calling",
+                "url": "https://www.nytimes.com/2024/03/19/science/physics-massey-black.html"
+            },
+            {
+                "title": "What we know about Trump's Failure to arrange a Half-billion-dollar Bond",
+                "url": "https://www.nytimes.com/2024/03/19/nyregion/trump-bond-ny-fraud-case.html"
+            },
+            {
+                "title": "Outside groups pledge over $1 Billion to aid Biden's Re-election Effort",
+                "url": "https://www.nytimes.com/2024/03/19/us/politics/biden-election-donation.html"
+            }
+        ];
 
-    var linksContainer = document.getElementById("links-container");
+        var colo = document.getElementById("colo");
+        var heading = document.createElement("h2");
+        heading.textContent = "Latest Stories";
+        colo.appendChild(heading);
 
-    jsonData.forEach(function(item) {
-
-        var linkElement = document.createElement("a");
-        linkElement.textContent = item.title;
-        linkElement.href = item.link;
-        linkElement.target = "_blank"; 
-
-        var lineBreak = document.createElement("br");
-
-        linksContainer.appendChild(linkElement);
-        linksContainer.appendChild(lineBreak);
-    });
-});
+        latestStories.forEach(function (story) {
+            var link = document.createElement("a");
+            link.href = story.url;
+            link.target = "_blank";
+            var headline = document.createElement("h3");
+            headline.textContent = story.title;
+            link.appendChild(headline);
+            colo.appendChild(link);
+        });
